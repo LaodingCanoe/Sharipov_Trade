@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2fd304277cc34fc3a671268734ef575e" Name="Diagram1">
+        <EntityTypeShape EntityType="Sharipov_TradeModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sharipov_TradeModel.OrderProduct" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sharipov_TradeModel.OrderPunkt" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sharipov_TradeModel.Pick_Up" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sharipov_TradeModel.Product" Width="2.375" PointX="2.875" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sharipov_TradeModel.Role" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sharipov_TradeModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sharipov_TradeModel.User" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="Sharipov_TradeModel.FK__OrderProd__Order__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="Sharipov_TradeModel.FK_Order_OrderPunkt" ManuallyRouted="false" />
+        <AssociationConnector Association="Sharipov_TradeModel.FK_Order_Pick_Up" ManuallyRouted="false" />
+        <AssociationConnector Association="Sharipov_TradeModel.FK_OrderProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Sharipov_TradeModel.FK_User_UserRole" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
