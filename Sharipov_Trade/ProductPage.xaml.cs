@@ -32,8 +32,45 @@ namespace Sharipov_Trade
             {
                 userRoleTB.Text = "Гостевой режим";
             }
-            var currentProduct = SharipovEntities.GetContext().Product.ToList();
-            ProdList.ItemsSource = currentProduct;
+            ProdList.ItemsSource = SharipovEntities.GetContext().Product.ToList();
+            SortCB.SelectedIndex = 0;
+            FiterCB.SelectedIndex = 0;
+        }
+
+        public void Update()
+        {
+            var currentProduct = SharipovEntities.GetContext().Product.ToList();   
+            if(FiterCB.SelectedIndex == 1)
+            {
+                currentProduct.Where(p => p.ProductDiscountAmount < 10).ToList();
+            }
+            if(FiterCB.SelectedIndex == 2)
+            {
+                currentProduct.Where(p => p.ProductDiscountAmount > 10 && p.ProductDiscountAmount < 15).ToList();
+            }
+            if (FiterCB.SelectedIndex == 3)
+            {
+                currentProduct.Where(p => p.ProductDiscountAmount > 15).ToList();
+            }
+            if(SortCB.SelectedIndex == 1) 
+            {
+                currentProduct = currentProduct.OrderBy(p => p.ProductCost).ToList();
+            }
+            if (SortCB.SelectedIndex == 2)
+            {
+                currentProduct = currentProduct.OrderByDescending(p => p.ProductCost).ToList();
+            }
+            ProdList.ItemsSource = currentProduct; 
+        }
+
+        private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Update();
+        }
+
+        private void FiterCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Update();
         }
     }
 }
